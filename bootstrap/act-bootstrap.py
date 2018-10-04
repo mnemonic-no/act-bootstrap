@@ -88,16 +88,14 @@ def create_fact_types(client, fact_types_filename):
     for fact_type in fact_types:
         name = fact_type["name"]
         validator = fact_type.get("validator", act.DEFAULT_VALIDATOR)
-        source_objects = fact_type.get("sourceObjects", [])
-        destination_objects = fact_type.get("destinationObjects", [])
-        bidirectional_objects = fact_type.get("bidrectionalObjects", [])
+        object_bindings = fact_type.get("objectBindings", [])
 
-        if not (source_objects or destination_objects or bidirectional_objects):
+        if not object_bindings:
             client.create_fact_type_all_bindings(
                 name, validator_parameter=validator)
 
         else:
-            client.create_fact_type(name, validator = validator, source_objects = source_objects, destination_objects = destination_objects)
+            client.create_fact_type(name, validator = validator, object_bindings = object_bindings)
 
 if __name__ == "__main__":
     args = parseargs()
