@@ -244,7 +244,7 @@
   },
   {
     "name": "targets",
-    "validator": "^((industry)|(location))$",
+    "validator": "^((sector)|(location))$",
     "objectBindings": [
       {
         "sourceObjectType": "campaign",
