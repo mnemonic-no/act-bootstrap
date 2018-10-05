@@ -109,6 +109,22 @@
     "validator": "^((campaign)|(incident)|(report))$",
     "objectBindings": [
       {
+        "sourceObjectType": "certificate",
+        "destinationObjectType": "campaign"
+      },
+      {
+        "sourceObjectType": "mutex",
+        "destinationObjectType": "campaign"
+      },
+      {
+        "sourceObjectType": "organization",
+        "destinationObjectType": "campaign"
+      },
+      {
+        "sourceObjectType": "userAgent",
+        "destinationObjectType": "campaign"
+      },
+      {
         "sourceObjectType": "uri",
         "destinationObjectType": "campaign"
       },
@@ -157,6 +173,26 @@
         "destinationObjectType": "campaign"
       },
       {
+        "sourceObjectType": "campaign",
+        "destinationObjectType": "incident"
+      },
+      {
+        "sourceObjectType": "organization",
+        "destinationObjectType": "incident"
+      },
+      {
+        "sourceObjectType": "certificate",
+        "destinationObjectType": "incident"
+      },
+      {
+        "sourceObjectType": "mutex",
+        "destinationObjectType": "incident"
+      },
+      {
+        "sourceObjectType": "userAgent",
+        "destinationObjectType": "incident"
+      },
+      {
         "sourceObjectType": "uri",
         "destinationObjectType": "incident"
       },
@@ -250,6 +286,26 @@
       },
       {
         "sourceObjectType": "person",
+        "destinationObjectType": "report"
+      },
+      {
+        "sourceObjectType": "campaign",
+        "destinationObjectType": "report"
+      },
+      {
+        "sourceObjectType": "organization",
+        "destinationObjectType": "report"
+      },
+      {
+        "sourceObjectType": "certificate",
+        "destinationObjectType": "report"
+      },
+      {
+        "sourceObjectType": "mutex",
+        "destinationObjectType": "report"
+      },
+      {
+        "sourceObjectType": "userAgent",
         "destinationObjectType": "report"
       }
     ]
