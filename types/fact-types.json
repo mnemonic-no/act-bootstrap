@@ -153,6 +153,10 @@
         "destinationObjectType": "campaign"
       },
       {
+        "sourceObjectType": "person",
+        "destinationObjectType": "campaign"
+      },
+      {
         "sourceObjectType": "uri",
         "destinationObjectType": "incident"
       },
@@ -197,6 +201,10 @@
         "destinationObjectType": "incident"
       },
       {
+        "sourceObjectType": "person",
+        "destinationObjectType": "incident"
+      },
+      {
         "sourceObjectType": "uri",
         "destinationObjectType": "report"
       },
@@ -238,6 +246,10 @@
       },
       {
         "sourceObjectType": "tool",
+        "destinationObjectType": "report"
+      },
+      {
+        "sourceObjectType": "person",
         "destinationObjectType": "report"
       }
     ]
