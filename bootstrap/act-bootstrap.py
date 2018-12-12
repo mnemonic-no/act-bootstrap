@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 import argparse
-import sys
-import os
 import json
+import os
+import sys
 from logging import critical, warning
+
 import act
 
 
@@ -27,6 +28,11 @@ def parseargs():
         dest="fact_types_filename",
         required=True,
         help="Fact type defintions (json)")
+    parser.add_argument(
+        "--meta-fact-types",
+        dest="meta_fact_types_filename",
+        required=True,
+        help="Meta Fact type defintions (json)")
     parser.add_argument(
         "--logfile",
         dest="log_file",
@@ -95,7 +101,34 @@ def create_fact_types(client, fact_types_filename):
                 name, validator_parameter=validator)
 
         else:
-            client.create_fact_type(name, validator = validator, object_bindings = object_bindings)
+            client.create_fact_type(name, validator=validator, object_bindings=object_bindings)
+
+
+def create_meta_fact_types(client, meta_fact_types_filename):
+    # Create fact type with allowed bindings to ALL objects
+    # We want to change this later, but keep it like this to make it simpler
+    # when evaluating the data model
+
+    if not os.path.isfile(meta_fact_types_filename):
+        critical("Meta Fact defintions file not found: %s" % meta_fact_types_filename)
+
+    try:
+        meta_fact_types = json.loads(open(meta_fact_types_filename).read())
+    except json.decoder.JSONDecodeError:
+        critical("Unable to parse file as json: %s" % meta_fact_types_filename)
+        sys.exit(1)
+
+    for meta_fact_type in meta_fact_types:
+        name = meta_fact_type["name"]
+        validator = meta_fact_type.get("validator", act.DEFAULT_VALIDATOR)
+        fact_bindings = meta_fact_type.get("factBindings", [])
+
+        if not fact_bindings:
+            client.create_meta_fact_type_all_bindings(name, validator_parameter=validator)
+
+        else:
+            client.create_meta_fact_type(name, fact_bindings=fact_bindings, validator=validator)
+
 
 if __name__ == "__main__":
     args = parseargs()
@@ -109,3 +142,4 @@ if __name__ == "__main__":
     create_object_types(
         client, object_types_filename=args.object_types_filename)
     create_fact_types(client, fact_types_filename=args.fact_types_filename)
+    create_meta_fact_types(client, meta_fact_types_filename=args.meta_fact_types_filename)

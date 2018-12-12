@@ -7,6 +7,7 @@ USERID=$1
 ACT_BASEURL=$2
 
 FACT_TYPES=${SCRIPT_PATH}/types/fact-types.json
+META_FACT_TYPES=${SCRIPT_PATH}/types/metafact-types.json
 OBJECT_TYPES=${SCRIPT_PATH}/types/object-types.json
 LOG=bootstrap.log.$$
 
@@ -23,7 +24,7 @@ ARGS="--userid $USERID --act-baseurl $ACT_BASEURL --loglevel $LOGLEVEL --logfile
 
 echo "Logging to $LOG"
 
-bootstrap/act-bootstrap.py $ARGS --object-types ${OBJECT_TYPES} --fact-types ${FACT_TYPES}
+bootstrap/act-bootstrap.py $ARGS --object-types ${OBJECT_TYPES} --fact-types ${FACT_TYPES} --meta-fact-types ${META_FACT_TYPES}
 bootstrap/misp-threat-actors.py $ARGS
 bootstrap/mitre-attack.py $ARGS
 bootstrap/fireeye-carbanak.py $ARGS

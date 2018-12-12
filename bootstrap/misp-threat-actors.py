@@ -2,9 +2,11 @@
 
 import argparse
 import csv
-from logging import warning, error
+from logging import error, warning
+
 import requests
 import urllib3
+
 import act
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -67,8 +69,13 @@ def add_to_act(client, ta_list):
     countries = countrylist()
 
     for ta in ta_list["values"]:
-        aliases = ta["meta"].get("synonyms", [])
         name = ta["value"]
+
+        if "meta" not in ta:
+            warning("Missing meta information in MISP on Threat Actor {}".format(name))
+            continue
+
+        aliases = ta["meta"].get("synonyms", [])
         country = ta["meta"].get("country", None)
 
         location = None
@@ -101,9 +108,10 @@ def add_to_act(client, ta_list):
 
         # Loop over all items under indicators in report
         for alias in aliases:
+            if alias == name:
+                continue  # Do not alias to ourself
             client.fact("threatActorAlias")\
-                .bidirectional("threatActor", alias)\
-                .bidirectional("threatActor", name)\
+                .bidirectional("threatActor", alias, "threatActor", name)\
                 .add()
 
 
