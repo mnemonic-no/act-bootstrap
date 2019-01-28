@@ -78,7 +78,47 @@
     ]
   },
   {
+   "name": "locatedIn",
+   "objectBindings": [
+      {
+       "sourceObjectType": "asn",
+       "destinationObjectType": "location"
+      }
+    ]
+  },
+  {
+   "name": "name",
+   "objectBindings": [
+      {
+       "sourceObjectType": "asn"
+      }
+    ],
+   "validator": "(.|\\n)+"
+  },
+  {
    "name": "observation"
+  },
+  {
+   "name": "owns",
+   "objectBindings": [
+      {
+       "sourceObjectType": "organization",
+       "destinationObjectType": "asn"
+      }
+    ]
+  },
+  {
+   "name": "partOf",
+   "objectBindings": [
+      {
+       "sourceObjectType": "ipv4",
+       "destinationObjectType": "ipv4Network"
+      },
+      {
+       "sourceObjectType": "ipv4Network",
+       "destinationObjectType": "asn"
+      }
+    ]
   },
   {
    "name": "relation"
