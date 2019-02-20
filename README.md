@@ -18,7 +18,7 @@ bootstrap/act-bootstrap.py \
     --act-baseurl http://localhost:8080 \
     --loglevel ERROR \
     --object-types types/object-types.json \
-    --fact-types datamodel/types/fact-types.json
+    --fact-types types/fact-types.json
 ```
 
 To bootstrap the type system and all OSINT (using userID 1 and API server on localhost:8080):
