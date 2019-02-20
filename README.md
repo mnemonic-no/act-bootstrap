@@ -6,7 +6,7 @@ These scripts are used to bootstrap the [ACT](https://github.com/mnemonic-no/act
 
 ## Requirements
 
-* [python-act](https://github.com/mnemonic-no/python-act)
+* [act-api-python](https://github.com/mnemonic-no/act-api-python)
 
 ## Usage
 
