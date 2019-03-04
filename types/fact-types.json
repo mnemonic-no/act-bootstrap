@@ -1,235 +1,299 @@
 [
   {
-   "name": "DNSRecord",
-   "objectBindings": [
+    "name": "accomplishes",
+    "objectBindings": [
       {
-       "destinationObjectType": ["fqdn", "ipv4", "ipv6"],
-       "sourceObjectType": "fqdn"
-      }
-    ],
-   "validator": "^((CNAME)|(AAAA)|(A))$"
-  },
-  {
-   "name": "externalLink"
-  },
-  {
-   "name": "geoCountry",
-   "objectBindings": [
-      {
-       "destinationObjectType": "location",
-       "sourceObjectType": ["ipv4", "ipv6"]
+        "destinationObjectType": "tactic",
+        "sourceObjectType": "technique"
       }
     ]
   },
   {
-   "name": "hasTitle",
-   "objectBindings": [
+    "name": "alias",
+    "objectBindings": [
       {
-       "sourceObjectType": "report"
-      }
-    ],
-   "validator": "(.|\\n)+"
-  },
-  {
-   "name": "incidentName"
-  },
-  {
-   "name": "isCountry",
-   "objectBindings": [
-      {
-       "sourceObjectType": "location"
-      }
-    ]
-  },
-  {
-   "name": "isRegion",
-   "objectBindings": [
-      {
-       "sourceObjectType": "location"
-      }
-    ]
-  },
-  {
-   "name": "isSinkhole",
-   "objectBindings": [
-      {
-       "sourceObjectType": "ipv4"
+        "bidirectional": true,
+        "destinationObjectType": "threatActor",
+        "sourceObjectType": "threatActor"
       },
       {
-       "sourceObjectType": "ipv6"
+        "bidirectional": true,
+        "destinationObjectType": "tool",
+        "sourceObjectType": "tool"
       }
     ]
   },
   {
-   "name": "isSubRegion",
-   "objectBindings": [
+    "name": "at",
+    "objectBindings": [
       {
-       "sourceObjectType": "location"
+        "destinationObjectType": "uri",
+        "sourceObjectType": "content"
       }
     ]
   },
   {
-   "name": "isTool",
-   "objectBindings": [
+    "name": "attributedTo",
+    "objectBindings": [
       {
-       "destinationObjectType": "tool",
-       "sourceObjectType": "hash"
-      }
-    ]
-  },
-  {
-   "name": "locatedIn",
-   "objectBindings": [
-      {
-       "sourceObjectType": "asn",
-       "destinationObjectType": "location"
-      }
-    ]
-  },
-  {
-   "name": "name",
-   "objectBindings": [
-      {
-       "sourceObjectType": "asn"
-      }
-    ],
-   "validator": "(.|\\n)+"
-  },
-  {
-   "name": "observation"
-  },
-  {
-   "name": "owns",
-   "objectBindings": [
-      {
-       "sourceObjectType": "organization",
-       "destinationObjectType": "asn"
-      }
-    ]
-  },
-  {
-   "name": "partOf",
-   "objectBindings": [
-      {
-       "sourceObjectType": "ipv4",
-       "destinationObjectType": "ipv4Network"
+        "destinationObjectType": [
+          "organization",
+          "person"
+        ],
+        "sourceObjectType": "threatActor"
       },
       {
-       "sourceObjectType": "ipv4Network",
-       "destinationObjectType": "asn"
+        "destinationObjectType": [
+          "threatActor",
+          "campaign"
+        ],
+        "sourceObjectType": "incident"
+      },
+      {
+        "destinationObjectType": "person",
+        "sourceObjectType": "username"
       }
     ]
   },
   {
-   "name": "relation"
+    "name": "basename",
+    "objectBindings": [
+      {
+        "sourceObjectType": "path"
+      }
+    ]
   },
   {
-   "name": "seenIn",
-   "objectBindings": [
+    "name": "classifiedAs",
+    "objectBindings": [
       {
-       "destinationObjectType": ["campaign", "incident", "report"],
-       "sourceObjectType": [
-         "campaign",
-         "certificate",
-         "email",
-         "fqdn",
-         "hash",
-         "ipv4",
-         "ipv6",
-         "location",
-         "mutex",
-         "organization",
-         "person",
-         "sector",
-         "threatActor",
-         "tool",
-         "uri",
-         "userAgent",
-         "vulnerability"
+        "destinationObjectType": "tool",
+        "sourceObjectType": "content"
+      }
+    ]
+  },
+  {
+    "name": "componentOf",
+    "objectBindings": [
+      {
+        "destinationObjectType": "uri",
+        "sourceObjectType": [
+          "credential",
+          "fqdn",
+          "ipv4",
+          "ipv6",
+          "path",
+          "query",
+          "username"
+        ]
+      },
+      {
+        "destinationObjectType": "email",
+        "sourceObjectType": [
+          "fqdn",
+          "username"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "connectsTo",
+    "objectBindings": [
+      {
+        "destinationObjectType": "uri",
+        "sourceObjectType": "content"
+      }
+    ]
+  },
+  {
+    "name": "implements",
+    "objectBindings": [
+      {
+        "destinationObjectType": "technique",
+        "sourceObjectType": "tool"
+      }
+    ]
+  },
+  {
+    "name": "locatedIn",
+    "objectBindings": [
+      {
+        "destinationObjectType": "country",
+        "sourceObjectType": "organization"
+      },
+      {
+        "destinationObjectType": "country",
+        "sourceObjectType": "person"
+      }
+    ]
+  },
+  {
+    "name": "memberOf",
+    "objectBindings": [
+      {
+        "destinationObjectType": "organization",
+        "sourceObjectType": "person"
+      },
+      {
+        "destinationObjectType": "sector",
+        "sourceObjectType": "organization"
+      },
+      {
+        "destinationObjectType": "ipv4Network",
+        "sourceObjectType": "ipv4"
+      },
+      {
+        "destinationObjectType": "asn",
+        "sourceObjectType": "ipv4Network"
+      },
+      {
+        "destinationObjectType": "subRegion",
+        "sourceObjectType": "country"
+      },
+      {
+        "destinationObjectType": "region",
+        "sourceObjectType": "subRegion"
+      }
+    ]
+  },
+  {
+    "name": "mentions",
+    "objectBindings": [
+      {
+        "destinationObjectType": [
+          "campaign",
+          "certificate",
+          "email",
+          "fqdn",
+          "hash",
+          "ipv4",
+          "ipv6",
+          "country",
+          "region",
+          "subRegion",
+          "mutex",
+          "organization",
+          "person",
+          "sector",
+          "threatActor",
+          "tool",
+          "uri",
+          "userAgent",
+          "vulnerability"
+        ],
+        "sourceObjectType": [
+          "report"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "name",
+    "objectBindings": [
+      {
+        "sourceObjectType": [
+          "asn",
+          "report"
         ]
       }
     ],
-   "validator": "^((campaign)|(incident)|(report))$"
+    "validator": "(.|\\n)+"
   },
   {
-   "name": "sourceGeography",
-   "objectBindings": [
+    "name": "observedIn",
+    "objectBindings": [
       {
-       "destinationObjectType": "location",
-       "sourceObjectType": "threatActor"
+        "destinationObjectType": [
+          "incident"
+        ],
+        "sourceObjectType": [
+          "certificate",
+          "credential",
+          "technique",
+          "uri",
+          "content"
+        ]
       }
     ]
   },
   {
-   "name": "targets",
-   "objectBindings": [
+    "name": "owns",
+    "objectBindings": [
       {
-       "destinationObjectType": ["location", "sector"],
-       "sourceObjectType": ["campaign", "threatActor"]
+        "destinationObjectType": "asn",
+        "sourceObjectType": "organization"
+      },
+      {
+        "destinationObjectType": "fqdn",
+        "sourceObjectType": [
+          "organization",
+          "person"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "port",
+    "objectBindings": [
+      {
+        "sourceObjectType": "uri"
       }
     ],
-   "validator": "^((sector)|(location))$"
+    "validator": "^[0-9]{1,5}$"
   },
   {
-   "name": "threatActorAlias",
-   "objectBindings": [
+    "name": "represents",
+    "objectBindings": [
       {
-       "bidirectional": true,
-       "destinationObjectType": "threatActor",
-       "sourceObjectType": "threatActor"
+        "destinationObjectType": "content",
+        "sourceObjectType": "hash"
       }
     ]
   },
   {
-   "name": "threatActorMember",
-   "objectBindings": [
+    "name": "resolvesTo",
+    "objectBindings": [
       {
-       "destinationObjectType": "threatActor",
-       "sourceObjectType": "person"
+        "destinationObjectType": [
+          "fqdn",
+          "ipv4",
+          "ipv6"
+        ],
+        "sourceObjectType": "fqdn"
       }
     ]
   },
   {
-   "name": "threatActorType"
-  },
-  {
-   "name": "toolAlias",
-   "objectBindings": [
+    "name": "scheme",
+    "objectBindings": [
       {
-       "bidirectional": true,
-       "destinationObjectType": "tool",
-       "sourceObjectType": "tool"
-      }
-    ]
-  },
-  {
-   "name": "usedBy"
-  },
-  {
-   "name": "usesC2",
-   "objectBindings": [
-      {
-       "destinationObjectType": ["fqdn", "ipv4", "ipv6", "uri"],
-       "sourceObjectType": "hash"
+        "sourceObjectType": "uri"
       }
     ],
-   "validator": "^((fqdn)|(ipv4)|(ipv6)|(uri))$"
+    "validator": "^[a-z][a-z\\d+-.]*$"
   },
   {
-   "name": "usesTechnique",
-   "objectBindings": [
+    "name": "sinkhole",
+    "objectBindings": [
       {
-       "destinationObjectType": "technique",
-       "sourceObjectType": [ "tactic", "threatActor" ]
+        "sourceObjectType": [
+          "ipv4",
+          "ipv6"
+        ]
       }
     ]
   },
   {
-   "name": "usesTool",
-   "objectBindings": [
+    "name": "targets",
+    "objectBindings": [
       {
-       "destinationObjectType": "tool",
-       "sourceObjectType": "threatActor"
+        "destinationObjectType": [
+          "organization",
+          "person"
+        ],
+        "sourceObjectType": [
+          "incident"
+        ]
       }
     ]
   }

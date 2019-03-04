@@ -26,5 +26,4 @@ echo "Logging to $LOG"
 
 bootstrap/act-bootstrap.py $ARGS --object-types ${OBJECT_TYPES} --fact-types ${FACT_TYPES} --meta-fact-types ${META_FACT_TYPES}
 bootstrap/misp-threat-actors.py $ARGS
-bootstrap/mitre-attack.py $ARGS
 bootstrap/fireeye-carbanak.py $ARGS

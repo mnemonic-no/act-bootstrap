@@ -1,37 +1,126 @@
 [
-    {"name": "accountNumber"},
-    {"name": "asn"},
-    {"name": "campaign"},
-    {"name": "certificate"},
-    {"name": "credential"},
-    {"name": "cryptocurrencyAddress"},
-    {"name": "email"},
-    {"name": "exploitTechnique"},
-    {"name": "fqdn"},
-    {"name": "goal"},
-    {"name": "hash"},
-    {"name": "incident"},
-    {"name": "ipv4"},
-    {"name": "ipv4Network", "validator": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/([0-9]|[1-2][0-9]|3[0-2])$"},
-    {"name": "ipv6"},
-    {"name": "location"},
-    {"name": "mimeType"},
-    {"name": "mutex"},
-    {"name": "organization"},
-    {"name": "person"},
-    {"name": "platform"},
-    {"name": "port"},
-    {"name": "procedure"},
-    {"name": "registryEntry"},
-    {"name": "report"},
-    {"name": "sector"},
-    {"name": "service"},
-    {"name": "ssn"},
-    {"name": "tactic"},
-    {"name": "technique"},
-    {"name": "threatActor"},
-    {"name": "tool", "validator": "^[\\. /a-z0-9_-]+$"},
-    {"name": "uri", "validator": "((https?)|(file)|(ftp))://.+"},
-    {"name": "userAgent"},
-    {"name": "vulnerability"}
+  {
+    "name": "accountNumber"
+  },
+  {
+    "name": "asn"
+  },
+  {
+    "name": "campaign"
+  },
+  {
+    "name": "certificate"
+  },
+  {
+    "name": "content"
+  },
+  {
+    "name": "country"
+  },
+  {
+    "name": "credential"
+  },
+  {
+    "name": "cryptocurrencyAddress"
+  },
+  {
+    "name": "email"
+  },
+  {
+    "name": "exploitTechnique"
+  },
+  {
+    "name": "fqdn"
+  },
+  {
+    "name": "goal"
+  },
+  {
+    "name": "hash"
+  },
+  {
+    "name": "incident"
+  },
+  {
+    "name": "ipv4",
+    "validator": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+  },
+  {
+    "name": "ipv4Network",
+    "validator": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/([0-9]|[1-2][0-9]|3[0-2])$"
+  },
+  {
+    "name": "ipv6"
+  },
+  {
+    "name": "mimeType"
+  },
+  {
+    "name": "mutex"
+  },
+  {
+    "name": "organization"
+  },
+  {
+    "name": "path"
+  },
+  {
+    "name": "person"
+  },
+  {
+    "name": "platform"
+  },
+  {
+    "name": "procedure"
+  },
+  {
+    "name": "query"
+  },
+  {
+    "name": "region"
+  },
+  {
+    "name": "registryEntry"
+  },
+  {
+    "name": "report"
+  },
+  {
+    "name": "sector"
+  },
+  {
+    "name": "service"
+  },
+  {
+    "name": "ssn"
+  },
+  {
+    "name": "subRegion"
+  },
+  {
+    "name": "tactic"
+  },
+  {
+    "name": "technique"
+  },
+  {
+    "name": "threatActor"
+  },
+  {
+    "name": "tool",
+    "validator": "^[\\. /a-z0-9_-]+$"
+  },
+  {
+    "name": "uri",
+    "validator": "^(?<scheme>[a-z][a-z\\d+-.]*):\\/\\/(?:(?:(?<username>[a-zA-Z\\d\\-._~\\!$&'()*+,;=%]*)(?::(?<credential>[a-zA-Z\\d\\-._~\\!$&'()*+,;=:%]*))?)@)?(?:(?<ipv4>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})|(?<ipv6>\\[(?:[a-fA-F\\d.:]+)\\])|(?<fqdn>[a-zA-Z\\d-.%]+))?(?::(?<port>\\d{1,5}))?(?<path>(?:\\/(?:[a-zA-Z\\d\\-._~\\!$&'()*+,;=:@%]*\\/)*(?<basename>[a-zA-Z\\d\\-._~\\!$&'()*+,;=:@%]*))?)(?:\\?(?<query>.*))?$"
+  },
+  {
+    "name": "userAgent"
+  },
+  {
+    "name": "username"
+  },
+  {
+    "name": "vulnerability"
+  }
 ]
