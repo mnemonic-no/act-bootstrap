@@ -208,10 +208,12 @@
         ],
         "sourceObjectType": [
           "certificate",
+          "content",
           "credential",
+          "email",
           "technique",
           "uri",
-          "content"
+          "username"
         ]
       }
     ]
