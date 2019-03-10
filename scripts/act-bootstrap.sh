@@ -2,17 +2,17 @@
 
 set -e
 
-function log {
+log() {
     echo "`date` [BOOTSTRAP] $1"
 }
 
-function usage {
+usage() {
     echo ""
     echo "syntax: bootstrap.sh <user id> <act baseurl>"
     echo "example: bootstrap.sh 1 http://localhost:8888"
 }
 
-BOOTSTRAP_HOME="`dirname $0`/.."
+BOOTSTRAP_HOME=`dirname $0`/..
 USERID=$1
 ACT_BASEURL=$2
 LOGLEVEL=info
@@ -24,8 +24,7 @@ OBJECT_TYPES=${BOOTSTRAP_HOME}/types/object-types.json
 
 if [ ! -d "$LOGDIR" ]; then
     log "Created log directory $LOGDIR"
-    echo $LOGDIR
-    mkdir ${LOGDIDR}
+    mkdir ${LOGDIR}
 fi
 
 if [ "$USERID" == "" ]; then
