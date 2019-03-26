@@ -46,5 +46,5 @@ ARGS="--userid $USERID --act-baseurl $ACT_BASEURL --loglevel $LOGLEVEL --logfile
 log "Starting bootstrap process, logging to $LOGFILE"
 bootstrap/act-bootstrap.py $ARGS --object-types ${OBJECT_TYPES} --fact-types ${FACT_TYPES} --meta-fact-types ${META_FACT_TYPES}
 bootstrap/misp-threat-actors.py $ARGS
-bootstrap/fireeye-carbanak.py $ARGS
+bootstrap/fireeye-carbanak.py --md5-lookup data/carbanak_md5_sha256.txt $ARGS
 log "Bootstraping completed"
