@@ -1,3 +1,5 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 # DEPRECATED (ACT bootstrap)
 
 This repository is deprecated. Type functionality is moved to [act-types](https://github.com/mnemonic-no/act-types) and a python package is now available on ([pypi](https://pypi.org/project/act-types/)).
