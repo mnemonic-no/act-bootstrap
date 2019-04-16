@@ -1,4 +1,6 @@
-# ACT bootstrap
+# # DEPRECATED (ACT bootstrap)
+
+This repository is deprecated. Type functionality is moved to [act-types](https://github.com/mnemonic-no/act-types) and a python package is now avilable on ([pypi](https://pypi.org/project/act-types/).
 
 ## Introduction
 
